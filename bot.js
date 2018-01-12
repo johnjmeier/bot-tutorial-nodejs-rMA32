@@ -31,7 +31,7 @@ function respond() {
   }
   else if(request.text && jagsbearsraiders.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.groupme.com/640x364.jpeg.f8a0e216bf7e42ed9a86b3ae23cc2ff1.large");
+    postMessage("https://media.giphy.com/media/H9Ko1WiAZNNZK/giphy.gif");
     this.res.end();
   }
   else if(request.text && jags.test(request.text)) {
