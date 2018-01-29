@@ -26,7 +26,7 @@ function respond() {
   }
   else if(request.text && botCommands.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Available Commands: /dl \n /ddl [TEAM INITIALS] \n /sdl [TEAM INITIALS] \n /pdl [PLAYER NAME] \n /stats \n /standings \n /scores \n /duck \n /advance \n /jags \n /jagsbearsraiders \n /ringcounter \n /kys");
+    postMessage("Available Commands: \n /dl \n /ddl [TEAM INITIALS] \n /sdl [TEAM INITIALS] \n /pdl [PLAYER NAME] \n /stats \n /standings \n /scores \n /duck \n /advance \n /jags \n /jagsbearsraiders \n /ringcounter \n /kys");
     this.res.end();
   }
   else if(request.text && botRegexSlut.test(request.text)) {
