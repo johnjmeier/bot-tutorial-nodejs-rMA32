@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botCommands = /^\/commands/;
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
@@ -22,6 +22,11 @@ function respond() {
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
     postMessage(cool());
+    this.res.end();
+  }
+  else if(request.text && botCommands.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Available Commands: /dl \n /ddl [TEAM INITIALS] \n /sdl [TEAM INITIALS] \n /pdl [PLAYER NAME] \n /stats \n /standings \n /scores \n /duck \n /advance \n /jags \n /jagsbearsraiders \n /ringcounter \n /kys");
     this.res.end();
   }
   else if(request.text && botRegexSlut.test(request.text)) {
@@ -121,11 +126,6 @@ function respond() {
     postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
     this.res.end();
   }
-  else if(request.text && botRegexRules.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://docs.google.com/document/d/1hSuEG7oplnx4IX6HGsMOjsWb9TCqC4-F1NLjuBz5PCM/edit");
-    this.res.end();
-  } 
   else if(request.text && botRegexGTA.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
